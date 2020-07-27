@@ -21,8 +21,12 @@ export class ProductsComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onAddProduct() {
-    this.products.push(this.productName);
+  onAddProduct(form) {
+    // this.products.push(this.productName);
+    if(form.valid) {
+      this.products.push(form.value.productName);
+    }
+    console.log(form); 
   }
 
   onRemoveProduct(productName: string) {

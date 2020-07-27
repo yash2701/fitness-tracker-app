@@ -58,7 +58,7 @@ Revision:
 
 
 
-    2.9
+    2.9 Custom Property & Event Binding.
     CROSS COMPONENT EVENT COMMUNICATION
     @Input: to take data from parent.
     bind variable to parent
@@ -85,3 +85,21 @@ Revision:
     TS  onRemoveProduct(productName: string) {
             this.products = this.products.filter(item => item !== productName);
         }
+
+
+    2.10 Forms
+
+    HTML   <form (ngSubmit)="onAddProduct(f)" #f="ngForm">
+                <input type="text" ngModel name="productName" required>
+                <button type="submit">Change Name</button>
+            </form>
+            <app-product (productClicked)="onRemoveProduct(product)" *ngFor="let product of products" [productName]="product"></app-product>
+
+    TS    onAddProduct(form) {
+            // this.products.push(this.productName);
+            if(form.valid) {
+            this.products.push(form.value.productName);
+            }
+            console.log(form); 
+          }
+
