@@ -41,6 +41,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
   ],
   imports: [
     FlexLayoutModule,
+    FormsModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,
