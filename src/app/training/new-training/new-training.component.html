@@ -3,10 +3,10 @@
     <mat-card-title fxLayoutAlign="center">Time to start a workout!</mat-card-title>
     <mat-card-content fxLayoutAlign="center">
       <mat-select name="food" placeholder="Favorite food" disableRipple>
-        <mat-option value="crunches">
-          Crunches
+        <mat-option *ngFor="let exercise of exercises" [value]="exercise.id">
+          {{ exercise.name }}
         </mat-option>
-        <mat-option value="touch-toes">
+        <!-- <mat-option value="touch-toes">
           Touch Toes
         </mat-option>
         <mat-option value="side-lunges">
@@ -14,7 +14,7 @@
         </mat-option>
         <mat-option value="burgees">
           Burgees
-        </mat-option>
+        </mat-option> -->
       </mat-select>
     </mat-card-content>
     <mat-card-actions fxLayoutAlign="center">
